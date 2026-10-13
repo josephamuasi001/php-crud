@@ -55,8 +55,7 @@ $student = $stmt->fetch();
         <p class="subtitle">Update student information below</p>
 
         <!-- Dynamic form actions structure passing down original id to script query string -->
-        <form action="edit.php?id=<?= htmlspecialchars($student['id']) ?>" method="POST">
-            <input type="hidden" value="<?= htmlspecialchars($student["id"]) ?>" name="id">
+        <form method="POST" action="edit.php?id=<?= htmlspecialchars((string)$id) ?>">            <input type="hidden" value="<?= htmlspecialchars($student["id"]) ?>" name="id">
             
             <div class="form-group">
                 <label for="name">Name</label>
