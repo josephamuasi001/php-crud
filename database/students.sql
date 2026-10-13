@@ -1,8 +1,0 @@
-CREATE table students (
-    id BIGINT UNSIGNED PRIMARY KEY,
-    name VARCHAR(100) NOT NULL UNIQUE,
-    age BIGINT UNSIGNED NOT NULL,
-    score BIGINT UNSIGNED NOT NULL,
-    subject VARCHAR(150) NOT NULL
-    );
-    
