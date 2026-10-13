@@ -1,0 +1,161 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. HEADER & ACTION CONTAINER
+   ========================================================================== */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 1.75rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.header p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* "Add Student" Link Styled as a Primary Button */
+.container a[href="add.php"] {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.container a[href="add.php"]:hover {
+    background-color: #1d4ed8;
+}
+
+.container a[href="add.php"]:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   3. SEARCH FORM STYLES
+   ========================================================================== */
+form[action="index.php"] {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 400px;
+    margin-bottom: 2rem;
+}
+
+form[action="index.php"] input[type="text"] {
+    flex: 1;
+    padding: 0.65rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form[action="index.php"] input[type="text"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+form[action="index.php"] button[type="submit"] {
+    background-color: #475569;
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form[action="index.php"] button[type="submit"]:hover {
+    background-color: #334155;
+}
+
+/* ==========================================================================
+   4. DATA TABLE STYLES
+   ========================================================================== */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* Fixes rounded corners appearance */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.table th {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+/* Zebra Striping for rows */
+.table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Action View Link Styled as a Subtle Secondary Button */
+.table td a[href^="view.php"] {
+    display: inline-block;
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    background-color: #eff6ff;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.table td a[href^="view.php"]:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+}
