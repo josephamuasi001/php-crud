@@ -10,14 +10,18 @@
 <?php
 require '../config/database.php';
 
-$id = $_GET["id"] ?? null ;
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
+if (!$id || $id < 1) {
+    exit("Invalid student ID.");
+}
 if($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $stmt = $pdo->prepare(
         "UPDATE students
-        SET name = :name
-            age = :age
-            score = :score
+        SET name = :name,
+            age = :age,
+            score = :score,
             subject = :subject
         WHERE id = :id
     ");
@@ -44,8 +48,10 @@ exit;
         
         
         
-$stmt = $pdo->query("SELECT * FROM students WHERE id = :id");
+$stmt = $pdo->prepare("SELECT * FROM students WHERE id = :id");
+$stmt->execute(["id" => $id]);
 $student = $stmt->fetch();
+
 
 ?>
     <div class="container">
@@ -54,7 +60,7 @@ $student = $stmt->fetch();
             <p>Make changes to student details</p>
         </div>
 
-        <form method="POST" action="edit.php?id=<?= $student["id"] ?>">
+        <form method="POST" action="edit.php?id=<?= htmlspecialchars($student["id"]) ?>">
             <label>ID:
                 <input type="name" name="id" required value="<?= $student["id"] ?>">
             </label>
