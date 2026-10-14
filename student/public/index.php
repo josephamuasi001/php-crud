@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="stylesheet" href="../src/index.css">
 </head>
 <body>
     <div class="container">
@@ -11,17 +12,17 @@
             <h1>Student Management System</h1>
             <p>Manage your students details</p>
         </div>
-        <a href="add.php">Add Student</a>
+        <a href="add.php" class="add-btn">Add Student</a>
     </div>
     <div class="search">
         <form action="index.php" method="GET">
             <input class="search-input" type="text" name="search" placeholder="Search Student">
-            <button type="submit">Search</button>
+            <button class="search-btn" type="submit">Search</button>
         </form>
     </div>
 <?php 
 require '../config/database.php';
-require '../src/grader.php';
+require '../config/grader.php';
 
 if(isset($_GET["search"])) {
     
