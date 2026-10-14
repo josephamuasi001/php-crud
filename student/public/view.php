@@ -34,6 +34,7 @@
     <p>Subject: <?= $student['subject'] ?></p>
     <a href="edit.php?id=<?= $student["id"] ?>">Edit</a>
     <form action="delete.php" method="POST">
+        <input type="hidden" name="id" value="<?= $student["id"] ?>">
         <button type="submit">Delete</button>
     </form>
     <a href="index.php">Back</a>
