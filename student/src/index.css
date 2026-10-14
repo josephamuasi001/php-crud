@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background-color: #f8fafc;
+    color: black;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.5rem 2rem ;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 1.75rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.header p {
+    font-size: 1.02rem;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 0.6rem;
+}
+
+.add-btn {
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: linear-gradient(210deg, red, violet);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+
+input {
+    flex: 1;
+    width: 80%;
+    padding: 0.65rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+input:focus {
+    border-color: blue;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.search-btn {
+    background-color: #475569;
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 20ms;
+    margin-left: 40px;
+}
+
+.search-btn:hover {
+    color: white;
+    background-color: black;
+}
+
+.table {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-collapse: collapse;
+    padding: 0 auto;
+    text-align: center;
+}
+
+th {
+    padding-top: 40px;
+    background-color: #8c95a1;
+}
+
+tr{
+    background-color: #fafafa;
+}
+
+tr:hover {
+    background-color: lightblue;
+
+}
+td {
+    padding-top: 40px;
+}
