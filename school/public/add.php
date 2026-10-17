@@ -3,64 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a new student</title>
+    <title>Add student</title>
 </head>
 <body>
-    <?php 
-    require '../config/database.php';
-    if($_SERVER["REQUEST_METHOD"] === "POST"){
+<?php 
+require '../config/database.php';
 
-        $stmt = $pdo->prepare("INSERT INTO students(id, name, age, score, subject)
-    VALUES (:id, :name, :age, :score, :subject)
-    ");
+if($_SERVER["REQUEST_METHOD"] === "POST") {
+        $id = $_POST["id"];
+        $name = $_POST["name"];
+        $age = $_POST["age"];
+        $score = $_POST["score"];
+        $subject = $_POST["subject"];
+    $stmt = $pdo->prepare(
+        "INSERT INTO students (id, name, age, score, subject)
+        VALUES (:id, :name, :age, :score, :subject)"
+    );
 
-    $id = $_POST["id"];
-    $name = $_POST["name"];
-    $age = $_POST["age"];
-    $score = $_POST["score"];
-    $subject = $_POST["subject"];
 
     $stmt->execute([
         "id" => $id,
         "name" => $name,
         "age" => $age,
         "score" => $score,
-        "subject" => $subject,
-        ]);
+        "subject" => $subject
+    ]);
 
-    
-        header("Location: index.php");
-    }
-    
-    ?>
-    <h1>Add a new Student Data</h1>
-    <p>Include new students to your database</p>
+    header("Location: index.php");
+       exit;
+}
+?>
+    <div class="container">
+        <div class="header">
+            <h1>Create student details</h1>
+            <p>Add a new student to your database</p>
+        </div>
+    </div>
 
     <form action="add.php" method="post">
         <label>ID
-            <input type="text" name="id" required >
+            <input type="text" name="id" required>
         </label>
-        <br><br>
-        <label>NAME
-            <input type="text" name="name" required >
+        <br> <br>
+        <label>Name
+            <input type="text" name="name" required>
         </label>
-        <br><br>
-        <label>AGE
-            <input type="number" name="age" required >
+        <br> <br>
+        <label>Age
+            <input type="number" name="age" required min="0" >
         </label>
-        <br><br>
-        <label>SCORE
-            <input type="number" name="score" required >
+        <br> <br>
+        <label>Score
+            <input type="number" name="score" required min="0" max="100" step="0.1" >
         </label>
-        <br><br>
-        <label>SUBJECT
-            <input type="text" name="subject" required >
+        <br> <br>
+        <label>Subject
+            <input type="text" name="subject" required>
         </label>
-        <br><br>
-        <button type="submit">+ Add</button>
-        <a href="index.php">Back</a>
-
-        
+        <br> <br>
+        <button type="submit">
+            + Add 
+        </button>
     </form>
+    <a href="index.php">Back</a>
+
 </body>
 </html>
