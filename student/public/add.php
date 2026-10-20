@@ -4,40 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Student</title>
+    <link rel="stylesheet" href="../src/add.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Create Student Details</h1>
-        <p>Add a new student</p>
+    <div class="wrapper">
+        <div class="header">
+            <h1>Create Student Details</h1>
+            <p>Add a new student</p>
     </div>
 
     <div class="add-form">
         <form action="add.php" method="POST">
-            <label>ID:
-                <input type="text" name="id" required placeholder="eg. STU001..">
-            </label>
+            <div class="input-box">
+                <input type="text" name="id" required placeholder="Student ID: eg. STU001..">
+            </div>
             <br><br>
-            <label>NAME:
+            <div class="input-box">
                 <input type="text" name="name" required placeholder="Full name">
-            </label>
+            </div>
             <br><br>
-            <label>AGE:
+            <div class="input-box">
                 <input type="number" name="age" required placeholder="Age" min="0" max="2000" >
-            </label>
+            </div>
             <br><br>
-            <label>SCORE
+            <div class="input-box">
                 <input type="number" name="score" required placeholder="0 - 100" min="0" max="100"  >
-            </label>
+            </div>
             <br><br>
-            <label>SUBJECT
+            <div class="input-box">
                 <input type="text" name="subject" required placeholder="Course title">
-            </label>
+            </div>
             <br><br>
-            <button type="submit">Create</button>
+            <div class="btn">
+                <button type="submit">Create</button>
+            </div>
         </form>
-        <a href="index.php">Back</a>
     </div>
-
+    <br>
+    <a href="index.php">Back</a>
+</div>
 
     <?php 
     require '../config/database.php';
